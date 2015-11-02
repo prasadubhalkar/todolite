@@ -1,0 +1,15 @@
+db.goals.save({"id" : 1, "name":"sampleTask1", "completed":1})
+db.goals.save({"id" : 2, "name":"sampleTask2", "completed":0})
+db.goals.save({"id" : 3, "name":"sampleTask3", "completed":0})
+db.goals.save({"id" : 4, "name":"sampleTask4", "completed":1})
+db.goals.save({"id" : 5, "name":"sampleTask5", "completed":0})
+
+db.goals.find()
+
+{ "_id" : ObjectId("560aecb25c278fb8a36d3f4f"), "sql_id" : 1, "name" : "sampleTask1", "completed" : 1 }
+{ "_id" : ObjectId("560aecdd5c278fb8a36d3f50"), "sql_id" : 2, "name" : "sampleTask2", "completed" : 0 }
+{ "_id" : ObjectId("560aece35c278fb8a36d3f51"), "sql_id" : 3, "name" : "sampleTask3", "completed" : 0 }
+{ "_id" : ObjectId("560aece95c278fb8a36d3f52"), "sql_id" : 4, "name" : "sampleTask4", "completed" : 1 }
+{ "_id" : ObjectId("560aecee5c278fb8a36d3f53"), "sql_id" : 5, "name" : "sampleTask5", "completed" : 0 }
+
+db.goals.update( { "_id" : ObjectId("560aecee5c278fb8a36d3f53") }, { $rename: { 'sql_id': 'id'} } )

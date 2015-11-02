@@ -1,0 +1,21 @@
+<ion-view cache-view="false" view-title="Goals">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" 
+                ng-repeat="goal in goals" 
+                type="item-text-wrap">
+        <input type="text" class="form-control" id="goalName" placeholder="Goal Name" 
+               ng-model="goal.name"/>
+        
+        <span class="checkbox"> <b> Done? </b> 
+          <label>
+            <input type="checkbox" ng-model="goal.completed" ng-true-value="1" ng-false-value="0"> 
+          </label>
+        </span>
+        <button type="button" class="btn btn-default" ng-click="updateGoal(goal)"> Save   </button>
+        <button type="button" class="btn btn-default" ng-click="removeGoal(goal)"> Delete </button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

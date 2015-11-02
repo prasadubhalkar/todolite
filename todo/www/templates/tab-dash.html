@@ -1,0 +1,34 @@
+<ion-view cache-view="false" view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider"><b>Create Goal</b></div>
+      <div class="item item-body">
+        <div class="form-group">
+          <input type="text" class="form-control" id="goalName" placeholder="Goal Name" ng-model="goal.name"/>
+          <div class="checkbox"> Completed?
+            <label>
+              <input type="checkbox" ng-model="goal.done" ng-true-value="1" ng-false-value="0"> 
+            </label>
+          </div>
+          <button type="button" class="btn btn-default" ng-click="addGoal()">Add Goal</button>
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider"><b>Pending Goals</b></div>
+      <div class="item item-body">
+        <div>
+          You have <b> {{incompletedCnt}} </b> incomplete goals
+        </div>
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider"><b>Completed Goals</b></div>
+      <div class="item item-body">
+        <div>
+          You have <b> {{completedCnt}} </b> completed goals
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
